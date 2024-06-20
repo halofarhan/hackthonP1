@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = 3339
+const PORT = 3330
 
 const router = require('./routers/index')
 

@@ -1,6 +1,6 @@
 
 const { request } = require('express')
-const{ Profile , User  } = require('../models/index')
+const{ Profile , User, Question, Category } = require('../models/index')
 
 class UserController{
  ///////////////////////////////////////////////// REGISTER FORM ///////////////////////////////////////////////
@@ -58,6 +58,19 @@ class UserController{
         } catch (error) {
             console.log(error)
             respond.send(error)
+        }
+    }
+
+    static async renderQuestion(request,respond){
+        try {
+            let profiles = await Profile.findAll()
+            let question = await Question.findAll({
+                include: Category
+            })
+            respond.render("question.ejs", {question, profiles})
+            
+        } catch (error) {
+            console.log(error);
         }
     }
 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    categories : 
+    <a href=""><button>Javascript</button></a>
+    <a href=""><button>Python</button></a>
+    <a href=""><button>HTML</button></a>
+    <a href=""><button>CSS</button></a>
+    <table border="1">
+        <% question.forEach(el=> { %>
+            <tr>
+                <td style="padding: 20px;">
+                    category: <%= el.Category.name %> <br><br>
+                    <%= el.question %> <br> <br>
+                    <a href=""><button>see the answer</button></a>
+                </td>
+                <% }) %>
+
+            </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th style="padding: 20px;">leader Board</th>
+        </tr>
+        <% profiles.forEach(el => { %>
+         <tr>
+            <td> 
+                <%= el.username %>
+                <%= el.answerCount%>
+            </td>
+         </tr>
+        <% }) %>
+
+
+    </table>
+</body>
+
+</html>
