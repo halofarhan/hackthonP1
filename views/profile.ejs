@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>create profile dulu ya </h1>
+
+    <div>
+
+        <form action="/profiles" method="post">
+
+            <div>
+                <label>First Name</label>
+                <input type="text" name="firstName">
+            </div>
+            <div>
+                <label>Last Name</label>
+                <input type="text" name="lastName">
+            </div>
+            <div>
+                <label>Latest Education</label>
+                <input type="text" name="latestEducation">
+            </div>
+            <div>
+                <label>Currently Work at</label>
+                <input type="text" name="workAt">
+            </div>
+
+            <div>
+                <label>Gender </label>
+                <% gender.forEach(el => { %>
+                    <input type="radio" name="gender" value="<%= el %>">
+                    <label><%= el %></label>                
+                <% }) %>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        
+        <form action="/register" method="post">  
+        
+                    <div>
+                        <label>First Name</label>
+                        <input type="text" name="firstName">
+                    </div>
+                    <div>
+                        <label>Last Name</label>
+                        <input type="text" name="lastName">
+                    </div>
+                    <div>
+                        <label>Latest Education</label>
+                        <input type="text" name="latestEducation">
+                    </div>
+                    <div>
+                        <label>Currently Work at</label>
+                        <input type="text" name="workAt">
+                    </div>
+        
+                    <div>
+                        <label>Gender </label>
+                        <% gender.forEach(el => { %>
+                            <input type="radio" name="gender" value="<%= el %>">
+                            <label><%= el %></label>                
+                        <% }) %>
+                        </div>
+    <div>
+        <label>Email</label>
+        <input type="email" name ="email" placeholder="index@gmail.com">
+    </div>
+    <div>
+        <label>Please Enter Your Password Here</label>
+        <input type="password" name="password" placeholder="***********">
+    </div>
+   
+    <div>
+        <label>Role</label>
+        <input type="text" name ="role" placeholder="admin/user">
+    </div>
+    <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

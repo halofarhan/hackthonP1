@@ -1,0 +1,23 @@
+[
+    {
+        "UserId" : 1,
+        "question": "Bagaimana cara looping di js",
+        "CategoryId" : 1
+    },
+    {
+        "UserId" : 2,
+        "question": "Bagaimana cara looping di Phyton",
+        "CategoryId" : 2
+    },
+    {
+        "UserId" : 3,
+        "question": "Bagaimana cara looping di HTML",
+        "CategoryId" : 3
+    },
+    {
+        "UserId" : 4,
+        "question": "Bagaimana cara merubah warna dalam CSS",
+        "CategoryId" : 4
+    }
+
+]
