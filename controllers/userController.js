@@ -1,6 +1,8 @@
 
 const { request } = require('express')
-const{ Profile , User, Question, Category } = require('../models/index')
+const{ Profile , User, Question, Category, Answer } = require('../models/index')
+const { Op, literal } = require("sequelize")
+
 
 class UserController{
  ///////////////////////////////////////////////// REGISTER FORM ///////////////////////////////////////////////
@@ -63,9 +65,25 @@ class UserController{
 
     static async renderQuestion(request,respond){
         try {
+            let querySearch = request.query.search || ""
+            console.log(request.query.filter, "<<<<");
+            let filtered = {
+                question: {
+                    [Op.iLike]: `%${querySearch}%`
+                }, 
+                CategoryId: request.query.filter
+            }
+            if (!request.query.filter){
+                filtered = {
+                    question: {
+                        [Op.iLike]: `%${querySearch}%`
+                    }
+                }
+            }
             let profiles = await Profile.findAll()
             let question = await Question.findAll({
-                include: Category
+                include: Category,
+                where: filtered
             })
             respond.render("question.ejs", {question, profiles})
             
@@ -74,6 +92,73 @@ class UserController{
         }
     }
 
+    static async renderQuestionDetails(request,respond){
+        try {
+            let id = request.params.id
+            let question = await Question.findByPk(id)
+            let answer = await Answer.findAll({
+                where: {
+                    QuestionId : id
+                }
+            })
+            // console.log(question);
+            respond.render("answer.ejs", {question, answer})
+        } catch (error) {
+            
+        }
+    }
+
+    static async handleAddAnswer(request,respond){
+        try {
+            let id = request.params.id
+            let {answer} = request.body
+            let answered = await Answer.create({
+                answer,
+                QuestionId: id
+            })
+
+            respond.redirect(`/questions/${id}`)
+        } catch (error) {
+            
+        }
+    }
+
+    static async renderAddQuestion(request,respond){
+        try {
+            respond.render("addQuestion.ejs")
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    static async handleAddQuestion(request,respond){
+        try {
+            let {question,CategoryId} = request.body
+            // console.log(request.body);
+            await Question.create({
+                question,
+                CategoryId
+            })
+            respond.redirect('/questions')
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    static async handleLike(request,respond){
+        try {
+            let id = request.params.id
+            console.log(id, "<<<<<<<<<<");
+            const one = await Answer.findByPk(id)
+            await Answer.update(
+                { like: literal('like + 1') },
+                { where: { id } }
+            );
+            respond.redirect(`/question/${one.QuestionId}`)
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
 }
 

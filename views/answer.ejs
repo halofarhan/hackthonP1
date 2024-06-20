@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/questions"><button>back</button></a>
+    <table >
+        <tr>
+            <th><%= question.question %></th>
+        </tr>
+        <tr>
+            <td style="padding-left: 20px; padding-top: 30px;">
+                answer: <br>
+            </td>
+            <% answer.forEach(el => { %>
+                <tr>
+                    <td style="padding: 20px;">
+                        <%= el.answer %> <br>
+                        likes : <%= el.like%>
+                        <a href="/answers/<%= el.id %>/like"><button>like</button></a>
+                    </td>
+                </tr>
+            <% }) %>
+            <td style="padding: 20px;">
+            </td>
+        </tr>
+    </table>
+    <form action="/answers/<%= question.id %>/add" method="post" >
+        <textarea name="answer" id="" ></textarea><br>
+        <button type="submit">Add Answer</button>
+    </form>
+</body>
+</html>

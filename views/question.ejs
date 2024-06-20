@@ -8,18 +8,25 @@
 </head>
 
 <body>
+    <form action="">
+        <label for="">Search Question</label>
+        <input type="text" name="search">
+        <button>search</button>
+    </form>
+    <a href="/questions/add"><button>Add Question</button></a> <br>
     categories : 
-    <a href=""><button>Javascript</button></a>
-    <a href=""><button>Python</button></a>
-    <a href=""><button>HTML</button></a>
-    <a href=""><button>CSS</button></a>
+    <a href="?filter=1"><button>Javascript</button></a>
+    <a href="?filter=2"><button>Python</button></a>
+    <a href="?filter=3"><button>HTML</button></a>
+    <a href="?filter=4"><button>CSS</button></a>
+    <a href="/questions"><button>ALL</button></a>
     <table border="1">
         <% question.forEach(el=> { %>
             <tr>
                 <td style="padding: 20px;">
                     category: <%= el.Category.name %> <br><br>
                     <%= el.question %> <br> <br>
-                    <a href=""><button>see the answer</button></a>
+                    <a href="/questions/<%= el.id %>"><button>see the answer</button></a>
                 </td>
                 <% }) %>
 

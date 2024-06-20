@@ -1,0 +1,86 @@
+[
+    {
+        "UserId": 1,
+        "QuestionId": 1,
+        "CategoryId": 1,
+        "like": 2,
+        "answer": "pakai for let i coba cari di dokumentasi"
+    },
+    {
+        "UserId": 2,
+        "QuestionId": 1,
+        "CategoryId": 1,
+        "like": 4,
+        "answer": "pakai for for each"
+    },
+    {
+        "UserId": 3,
+        "QuestionId": 1,
+        "CategoryId": 1,
+        "like": 3,
+        "answer": "pakai for in coba cari di dokumentasi"
+    },
+    {
+        "UserId": 1,
+        "QuestionId": 2,
+        "CategoryId": 2,
+        "like": 2,
+        "answer": "pakai for let i coba cari di dokumentasi"
+    },
+    {
+        "UserId": 2,
+        "QuestionId": 2,
+        "CategoryId": 2,
+        "like": 4,
+        "answer": "pakai for for each"
+    },
+    {
+        "UserId": 3,
+        "QuestionId": 2,
+        "CategoryId": 2,
+        "like": 3,
+        "answer": "pakai for in coba cari di dokumentasi"
+    },
+    {
+        "UserId": 3,
+        "QuestionId": 3,
+        "CategoryId": 3,
+        "like": 2,
+        "answer": "pakai for let i coba cari di dokumentasi"
+    },
+    {
+        "UserId": 3,
+        "QuestionId": 3,
+        "CategoryId": 3,
+        "like": 4,
+        "answer": "pakai for for each"
+    },
+    {
+        "UserId": 1,
+        "QuestionId": 3,
+        "CategoryId": 3,
+        "like": 3,
+        "answer": "pakai for in coba cari di dokumentasi"
+    },
+    {
+        "UserId": 1,
+        "QuestionId": 4,
+        "CategoryId": 4,
+        "like": 2,
+        "answer": "pakai for let i coba cari di dokumentasi"
+    },
+    {
+        "UserId": 2,
+        "QuestionId": 4,
+        "CategoryId": 4,
+        "like": 4,
+        "answer": "pakai for for each"
+    },
+    {
+        "UserId": 3,
+        "QuestionId": 4,
+        "CategoryId": 4,
+        "like": 3,
+        "answer": "pakai for in coba cari di dokumentasi"
+    }
+]
